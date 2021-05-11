@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "huntingandharvestenhancement:block/honeyberry_bush_stage_0"
+    },
+    "age=1": {
+      "model": "huntingandharvestenhancement:block/honeyberry_bush_stage_1"
+    },
+    "age=2": {
+      "model": "huntingandharvestenhancement:block/honeyberry_bush_stage_2"
+    },
+    "age=3": {
+      "model": "huntingandharvestenhancement:block/honeyberry_bush_stage_3"
+    }
+  }
+}

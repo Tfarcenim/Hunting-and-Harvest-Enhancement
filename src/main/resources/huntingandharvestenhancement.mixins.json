@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "tfar.huntingandharvestenhancement.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "huntingandharvestenhancement.refmap.json",
+  "mixins": [
+  ],
+  "client":[
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}

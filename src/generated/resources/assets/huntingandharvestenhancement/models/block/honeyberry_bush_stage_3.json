@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "huntingandharvestenhancement:block/honeyberry_bush_stage_3"
+  }
+}

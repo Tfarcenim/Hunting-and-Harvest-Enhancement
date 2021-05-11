@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "huntingandharvestenhancement:block/seaberry_bush_stage_3"
+  }
+}
