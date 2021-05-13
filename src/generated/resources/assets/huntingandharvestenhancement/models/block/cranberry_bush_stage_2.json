@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/cross",
+  "parent": "huntingandharvestenhancement:block/lilypad_base",
   "textures": {
-    "cross": "minecraft:block/sweet_berry_bush_stage2"
+    "top": "minecraft:block/sweet_berry_bush_stage2"
   }
 }

@@ -40,6 +40,8 @@ public class ModBlocks {
     public static final Block COCONUT_LEAVES = createLeavesBlock();
     public static final Block BANANA_LEAVES = createLeavesBlock();
 
+    public static final Block ORANGE_PLANKS = new Block(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD));
+
     public static final Block APPLE_SAPLING = new SaplingBlock(new AppleTree(),AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT));
     public static final Block ORANGE_SAPLING = new SaplingBlock(new OrangeTree(),AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT));
     public static final Block COCONUT_SAPLING = new SaplingBlock(new CoconutPalm(),AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT));

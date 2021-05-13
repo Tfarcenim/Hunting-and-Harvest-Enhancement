@@ -31,7 +31,7 @@ public class ModBlockstateProvider extends BlockStateProvider {
         createCranberryModels();
         createCarpetModel(ModBlocks.FLOWER_CARPET);
         logBlock(ModBlocks.ORANGE_LOG);
-
+        simpleBlock(ModBlocks.ORANGE_PLANKS);
        // logBlock(ModBlocks.APPLE_LOG);
     }
 
@@ -50,13 +50,16 @@ public class ModBlockstateProvider extends BlockStateProvider {
             int age = state.get(CranberryBushBlock.AGE_0_4);
             ModelFile modelFile;
             if (age == 0) {
-                modelFile = models().withExistingParent(name + "_stage_" + age, HuntingAndHarvestEnhancement.MODID+":block/blossom_lilypad");
+                //lily blossom
+                modelFile = models().withExistingParent(name + "_stage_" + age, HuntingAndHarvestEnhancement.MODID+":block/lilypad_base");
             } else if (age < 3) {
-                modelFile = models().withExistingParent(name + "_stage_" + age, "block/cross")
-                        .texture("cross", new ResourceLocation("block/sweet_berry_bush_stage" + age));
+                //cranberry, uses vanilla sweetberry stages
+                modelFile = models().withExistingParent(name + "_stage_" + age, HuntingAndHarvestEnhancement.MODID+":block/lilypad_base")
+                        .texture("top", new ResourceLocation("block/sweet_berry_bush_stage" + age));
             } else {
-                modelFile = models().withExistingParent(name + "_stage_" + age, "block/cross")
-                        .texture("cross", new ResourceLocation(HuntingAndHarvestEnhancement.MODID, "block/" + name + "_stage_" + age));
+                //fully grown
+                modelFile = models().withExistingParent(name + "_stage_" + age, HuntingAndHarvestEnhancement.MODID+":block/lilypad_base")
+                        .texture("top", new ResourceLocation(HuntingAndHarvestEnhancement.MODID, "block/" + name + "_stage_" + age));
             }
             return ConfiguredModel.builder().modelFile(modelFile).build();
         });

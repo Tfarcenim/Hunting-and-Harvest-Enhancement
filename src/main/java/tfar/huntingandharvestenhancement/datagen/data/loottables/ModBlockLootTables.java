@@ -27,7 +27,7 @@ public class ModBlockLootTables extends BlockLootTables {
         registerDropSelfLootTable(ModBlocks.COCONUT_LOG);
         registerDropSelfLootTable(ModBlocks.BANANA_LOG);
 
-        //this.registerLootTable(ModBlocks.APPLE_LEAVES, leaves -> droppingWithChancesAndSticks(leaves, ModBlocks.APPLE_SAPLING, DEFAULT_SAPLING_DROP_RATES));
+        this.registerLootTable(ModBlocks.APPLE_LEAVES, leaves -> droppingWithChancesAndSticks(leaves, ModBlocks.APPLE_SAPLING, DEFAULT_SAPLING_DROP_RATES));
         this.registerLootTable(ModBlocks.ORANGE_LEAVES, leaves -> droppingWithChancesAndSticks(leaves, ModBlocks.ORANGE_SAPLING, DEFAULT_SAPLING_DROP_RATES));
         this.registerLootTable(ModBlocks.BANANA_LEAVES, leaves -> droppingWithChancesAndSticks(leaves, ModBlocks.BANANA_SAPLING, DEFAULT_SAPLING_DROP_RATES));
         this.registerLootTable(ModBlocks.COCONUT_LEAVES, leaves -> droppingWithChancesAndSticks(leaves, ModBlocks.COCONUT_SAPLING, DEFAULT_SAPLING_DROP_RATES));
@@ -46,6 +46,7 @@ public class ModBlockLootTables extends BlockLootTables {
         registerDropSelfLootTable(ModBlocks.BANANA_SAPLING);
         registerDropSelfLootTable(ModBlocks.FLOWER_CARPET);
 
+        registerDropSelfLootTable(ModBlocks.ORANGE_PLANKS);
     }
 
     protected void registerBushLootTable(Block bush, Item berry) {

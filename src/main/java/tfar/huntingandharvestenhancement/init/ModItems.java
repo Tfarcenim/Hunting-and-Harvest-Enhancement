@@ -56,6 +56,8 @@ public class ModItems {
     public static final Item COCONUT_SAPLING = new BlockItem(ModBlocks.COCONUT_SAPLING, new Item.Properties().group(group));
     public static final Item BANANA_SAPLING = new BlockItem(ModBlocks.BANANA_SAPLING, new Item.Properties().group(group));
 
+    public static final Item ORANGE_PLANKS = new BlockItem(ModBlocks.ORANGE_PLANKS, new Item.Properties().group(group));
+
     public static final Item FLOWER_CARPET = new BlockItem(ModBlocks.FLOWER_CARPET,new Item.Properties().group(group));
 
     private static List<Item> MOD_ITEMS;
