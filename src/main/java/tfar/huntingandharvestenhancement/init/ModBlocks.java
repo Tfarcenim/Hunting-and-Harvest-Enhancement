@@ -49,6 +49,8 @@ public class ModBlocks {
 
     public static final Block FLOWER_CARPET = new FlowerCarpetBlock(AbstractBlock.Properties.create(Material.PLANTS).notSolid());
 
+    public static final Block APPLE = new AppleBlock(AbstractBlock.Properties.create(Material.PLANTS).noDrops().notSolid());
+
     private static List<Block> MOD_BLOCKS;
 
     public static void register(RegistryEvent.Register<Block> e) {

@@ -18,8 +18,9 @@ public class ModFeatureConfigs {
     public static final BlockClusterFeatureConfig SEABERRY_BUSH_PATCH_CONFIG = new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(States.SEABERRY_BUSH), SimpleBlockPlacer.PLACER).tries(64).whitelist(ImmutableSet.of(States.GRASS_BLOCK.getBlock())).preventProjection().build();
     public static final BlockClusterFeatureConfig HONEYBERRY_BUSH_PATCH_CONFIG = new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(States.HONEYBERRY_BUSH), SimpleBlockPlacer.PLACER).tries(64).whitelist(ImmutableSet.of(States.GRASS_BLOCK.getBlock())).preventProjection().build();
 
-
     static class States {
+        public static final BlockState OAK_LOG = Blocks.OAK_LOG.getDefaultState();
+        public static final BlockState APPLE_LEAVES = ModBlocks.APPLE_LEAVES.getDefaultState();
         public static final BlockState GRASS_BLOCK = Blocks.GRASS_BLOCK.getDefaultState();
         public static final BlockState BLACKBERRY_BUSH = ModBlocks.BLACKBERRY_BUSH.getDefaultState();
         public static final BlockState BLUEBERRY_BUSH = ModBlocks.BLUEBERRY_BUSH.getDefaultState();
