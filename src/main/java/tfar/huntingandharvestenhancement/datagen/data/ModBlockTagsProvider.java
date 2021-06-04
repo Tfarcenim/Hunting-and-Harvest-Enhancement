@@ -16,6 +16,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
     @Override
     protected void registerTags() {
-        getOrCreateBuilder(BlockTags.LEAVES).add(ModBlocks.APPLE_LEAVES);
+        getOrCreateBuilder(BlockTags.LEAVES).add(ModBlocks.ORANGE_LEAVES,ModBlocks.COCONUT_LEAVES,ModBlocks.BANANA_LEAVES);
+        getOrCreateBuilder(BlockTags.LOGS_THAT_BURN).add(ModBlocks.ORANGE_LOG,ModBlocks.COCONUT_LOG,ModBlocks.BANANA_LOG);
     }
 }

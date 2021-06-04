@@ -20,7 +20,6 @@ public class ModFeatureConfigs {
 
     static class States {
         public static final BlockState OAK_LOG = Blocks.OAK_LOG.getDefaultState();
-        public static final BlockState APPLE_LEAVES = ModBlocks.APPLE_LEAVES.getDefaultState();
         public static final BlockState GRASS_BLOCK = Blocks.GRASS_BLOCK.getDefaultState();
         public static final BlockState BLACKBERRY_BUSH = ModBlocks.BLACKBERRY_BUSH.getDefaultState();
         public static final BlockState BLUEBERRY_BUSH = ModBlocks.BLUEBERRY_BUSH.getDefaultState();

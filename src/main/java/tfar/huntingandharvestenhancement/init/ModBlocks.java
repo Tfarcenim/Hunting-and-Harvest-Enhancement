@@ -30,12 +30,10 @@ public class ModBlocks {
     public static final Block SEABERRY_BUSH = new SweetBerryBushBlock(AbstractBlock.Properties.from(Blocks.SWEET_BERRY_BUSH));
     public static final Block HONEYBERRY_BUSH = new SweetBerryBushBlock(AbstractBlock.Properties.from(Blocks.SWEET_BERRY_BUSH));
 
-    public static final RotatedPillarBlock APPLE_LOG = createLogBlock(MaterialColor.WOOD, MaterialColor.OBSIDIAN);
     public static final RotatedPillarBlock ORANGE_LOG = createLogBlock(MaterialColor.WOOD, MaterialColor.OBSIDIAN);
     public static final RotatedPillarBlock COCONUT_LOG = createLogBlock(MaterialColor.WOOD, MaterialColor.OBSIDIAN);
     public static final RotatedPillarBlock BANANA_LOG = createLogBlock(MaterialColor.WOOD, MaterialColor.OBSIDIAN);
 
-    public static final Block APPLE_LEAVES = createLeavesBlock();
     public static final Block ORANGE_LEAVES = createLeavesBlock();
     public static final Block COCONUT_LEAVES = createLeavesBlock();
     public static final Block BANANA_LEAVES = createLeavesBlock();
@@ -49,7 +47,8 @@ public class ModBlocks {
 
     public static final Block FLOWER_CARPET = new FlowerCarpetBlock(AbstractBlock.Properties.create(Material.PLANTS).notSolid());
 
-    public static final Block APPLE = new AppleBlock(AbstractBlock.Properties.create(Material.PLANTS).noDrops().notSolid());
+    public static final Block APPLE = new FruitBlock(AbstractBlock.Properties.create(Material.PLANTS).noDrops().doesNotBlockMovement());
+    public static final Block ORANGE = new FruitBlock(AbstractBlock.Properties.create(Material.PLANTS).noDrops().doesNotBlockMovement());
 
     private static List<Block> MOD_BLOCKS;
 

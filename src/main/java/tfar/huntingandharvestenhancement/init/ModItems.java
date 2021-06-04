@@ -41,12 +41,10 @@ public class ModItems {
 
     public static final Item LILY_BLOSSOM = new LilyBlossomItem(new Item.Properties().group(group));
 
-    public static final Item APPLE_LOG = new BlockItem(ModBlocks.APPLE_LOG,new Item.Properties().group(group));
     public static final Item ORANGE_LOG = new BlockItem(ModBlocks.ORANGE_LOG, new Item.Properties().group(group));
     public static final Item COCONUT_LOG = new BlockItem(ModBlocks.COCONUT_LOG, new Item.Properties().group(group));
     public static final Item BANANA_LOG = new BlockItem(ModBlocks.BANANA_LOG, new Item.Properties().group(group));
 
-    public static final Item APPLE_LEAVES = new BlockItem(ModBlocks.APPLE_LEAVES, new Item.Properties().group(group));
     public static final Item ORANGE_LEAVES = new BlockItem(ModBlocks.ORANGE_LEAVES, new Item.Properties().group(group));
     public static final Item COCONUT_LEAVES = new BlockItem(ModBlocks.COCONUT_LEAVES, new Item.Properties().group(group));
     public static final Item BANANA_LEAVES = new BlockItem(ModBlocks.BANANA_LEAVES, new Item.Properties().group(group));

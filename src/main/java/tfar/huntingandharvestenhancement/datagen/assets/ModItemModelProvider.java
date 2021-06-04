@@ -7,6 +7,7 @@ import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import tfar.huntingandharvestenhancement.HuntingAndHarvestEnhancement;
+import tfar.huntingandharvestenhancement.init.ModBlocks;
 import tfar.huntingandharvestenhancement.init.ModItems;
 
 public class ModItemModelProvider extends ItemModelProvider {
@@ -27,6 +28,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         makeOneLayerItem(ModItems.LILY_BLOSSOM);
         makeOneLayerItem(ModItems.ORANGE);
         makeSimpleBlockItem(ModItems.FLOWER_CARPET);
+        makeSimpleBlockItem(ModItems.ORANGE_PLANKS);
+        makeSimpleBlockItem(ModItems.ORANGE_LOG);
+        makeSimpleBlockItem(ModItems.ORANGE_LEAVES);
     }
 
 

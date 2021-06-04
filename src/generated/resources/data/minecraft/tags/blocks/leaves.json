@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "huntingandharvestenhancement:apple_leaves"
+    "huntingandharvestenhancement:orange_leaves",
+    "huntingandharvestenhancement:coconut_leaves",
+    "huntingandharvestenhancement:banana_leaves"
   ]
 }

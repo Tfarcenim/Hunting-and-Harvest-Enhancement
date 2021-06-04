@@ -1,6 +1,7 @@
 package tfar.huntingandharvestenhancement.world.generation;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.WorldGenRegistries;
@@ -10,6 +11,8 @@ import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
 import net.minecraft.world.gen.trunkplacer.StraightTrunkPlacer;
 import tfar.huntingandharvestenhancement.HuntingAndHarvestEnhancement;
 import tfar.huntingandharvestenhancement.decorators.AppleDecorator;
+import tfar.huntingandharvestenhancement.decorators.FruitDecorator;
+import tfar.huntingandharvestenhancement.decorators.OrangeDecorator;
 import tfar.huntingandharvestenhancement.init.ModBlocks;
 
 import java.lang.reflect.Field;
@@ -33,27 +36,31 @@ public class ModConfiguredFeatures {
     //public static final ConfiguredFeature<?, ?> PATCH_SEABERRY_DECORATED = PATCH_SEABERRY_BUSH.withPlacement(Features.Placements.PATCH_PLACEMENT).chance(12);
     //public static final ConfiguredFeature<?, ?> PATCH_HONEYBERRY_DECORATED = PATCH_HONEYBERRY_BUSH.withPlacement(Features.Placements.PATCH_PLACEMENT).chance(12);
 
-    public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> APPLE = Feature.TREE.withConfiguration((new BaseTreeFeatureConfig.Builder
-            (new SimpleBlockStateProvider(ModFeatureConfigs.States.OAK_LOG), new SimpleBlockStateProvider(ModFeatureConfigs.States.APPLE_LEAVES),
+    public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> APPLE = Feature.TREE.withConfiguration(
+            new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModFeatureConfigs.States.OAK_LOG), new SimpleBlockStateProvider(Blocks.OAK_LEAVES.getDefaultState()),
                     new BlobFoliagePlacer(FeatureSpread.create(2), FeatureSpread.create(0), 3),
-                    new StraightTrunkPlacer(4, 2, 0), new TwoLayerFeature(1, 0, 1)))
+                    new StraightTrunkPlacer(4, 2, 0), new TwoLayerFeature(1, 0, 1))
             .setDecorators(ImmutableList.of(new AppleDecorator(1)))
             .setIgnoreVines().build());
 
-    public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> ORANGE = Feature.TREE.withConfiguration((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlocks.APPLE_LOG.getDefaultState()),
-            new SimpleBlockStateProvider(ModBlocks.APPLE_LEAVES.getDefaultState())
+    public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> ORANGE = Feature.TREE.withConfiguration(new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlocks.ORANGE_LOG.getDefaultState()),
+            new SimpleBlockStateProvider(ModBlocks.ORANGE_LEAVES.getDefaultState())
             , new BlobFoliagePlacer(FeatureSpread.create(2), FeatureSpread.create(0), 3),
-            new StraightTrunkPlacer(4, 2, 0), new TwoLayerFeature(1, 0, 1))).setIgnoreVines().build());
+            new StraightTrunkPlacer(4, 2, 0), new TwoLayerFeature(1, 0, 1))
+            .setDecorators(ImmutableList.of(new OrangeDecorator(1)))
+            .setIgnoreVines().build());
 
-    public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> BANANA = Feature.TREE.withConfiguration((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlocks.APPLE_LOG.getDefaultState()),
-            new SimpleBlockStateProvider(ModBlocks.APPLE_LEAVES.getDefaultState())
+    public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> BANANA = Feature.TREE.withConfiguration(new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
+            new SimpleBlockStateProvider(Blocks.OAK_LEAVES.getDefaultState())
             , new BlobFoliagePlacer(FeatureSpread.create(2), FeatureSpread.create(0), 3),
-            new StraightTrunkPlacer(4, 2, 0), new TwoLayerFeature(1, 0, 1))).setIgnoreVines().build());
+            new StraightTrunkPlacer(4, 2, 0), new TwoLayerFeature(1, 0, 1))
+            .setIgnoreVines().build());
 
-    public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> COCONUT = Feature.TREE.withConfiguration((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlocks.APPLE_LOG.getDefaultState()),
-            new SimpleBlockStateProvider(ModBlocks.APPLE_LEAVES.getDefaultState())
+    public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> COCONUT = Feature.TREE.withConfiguration(new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
+            new SimpleBlockStateProvider(Blocks.OAK_LEAVES.getDefaultState())
             , new BlobFoliagePlacer(FeatureSpread.create(2), FeatureSpread.create(0), 3),
-            new StraightTrunkPlacer(4, 2, 0), new TwoLayerFeature(1, 0, 1))).setIgnoreVines().build());
+            new StraightTrunkPlacer(4, 2, 0), new TwoLayerFeature(1, 0, 1))
+            .setIgnoreVines().build());
 
     public static void register() {
         for (Field field : ModConfiguredFeatures.class.getFields()) {

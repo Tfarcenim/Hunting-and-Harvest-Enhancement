@@ -9,23 +9,23 @@ import tfar.huntingandharvestenhancement.init.ModTreeDecoratorTypes;
 
 import java.util.Random;
 
-public class AppleDecorator extends FruitDecorator {
-    public static final Codec<AppleDecorator> CODEC = Codec.floatRange(0.0F, 1.0F)
+public class OrangeDecorator extends FruitDecorator {
+    public static final Codec<OrangeDecorator> CODEC = Codec.floatRange(0.0F, 1.0F)
             .fieldOf("fruit")
-            .xmap(AppleDecorator::new, decorator -> decorator.probability)
+            .xmap(OrangeDecorator::new, decorator -> decorator.probability)
             .codec();
 
-    public AppleDecorator(float probability) {
+    public OrangeDecorator(float probability) {
         super(probability);
     }
 
     @Override
-    protected TreeDecoratorType<?> getDecoratorType() {
-        return ModTreeDecoratorTypes.APPLE;
+    protected BlockState getBlockstate(Random rand) {
+        return ModBlocks.ORANGE.getDefaultState().with(FruitBlock.AGE, rand.nextInt(3));
     }
 
     @Override
-    protected BlockState getBlockstate(Random rand) {
-        return  ModBlocks.APPLE.getDefaultState().with(FruitBlock.AGE, rand.nextInt(3));
+    protected TreeDecoratorType<?> getDecoratorType() {
+        return ModTreeDecoratorTypes.ORANGE;
     }
 }

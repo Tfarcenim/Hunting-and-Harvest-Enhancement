@@ -8,8 +8,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import tfar.huntingandharvestenhancement.HuntingAndHarvestEnhancement;
-import tfar.huntingandharvestenhancement.block.AppleBlock;
 import tfar.huntingandharvestenhancement.block.CranberryBushBlock;
+import tfar.huntingandharvestenhancement.block.FruitBlock;
 import tfar.huntingandharvestenhancement.init.ModBlocks;
 
 public class ModBlockstateProvider extends BlockStateProvider {
@@ -35,17 +35,24 @@ public class ModBlockstateProvider extends BlockStateProvider {
         logBlock(ModBlocks.ORANGE_LOG);
         simpleBlock(ModBlocks.ORANGE_PLANKS);
 
-        simpleBlock(ModBlocks.APPLE_LEAVES, models().cubeAll(Blocks.OAK_LEAVES.getRegistryName().getPath(), blockTexture(Blocks.OAK_LEAVES)));
 
-        createApples(ModBlocks.APPLE);
+        ModelFile modelFile = models().withExistingParent("orange_leaves", "minecraft:block/leaves")
+                    .texture("all", new ResourceLocation("minecraft:block/oak_leaves"));
 
-        // logBlock(ModBlocks.APPLE_LOG);
+       // ConfiguredModel[] build = ConfiguredModel.builder().modelFile(modelFile).build();
+
+
+
+
+        createFruit(ModBlocks.APPLE);
+        createFruit(ModBlocks.ORANGE);
+        simpleBlock(ModBlocks.ORANGE_LEAVES,modelFile);
     }
 
-    protected void createApples(Block plant) {
+    protected void createFruit(Block plant) {
         String name = plant.getRegistryName().getPath();
         getVariantBuilder(plant).forAllStates(state -> {
-            int age = state.get(SweetBerryBushBlock.AGE);
+            int age = state.get(FruitBlock.AGE);
             ModelFile modelFile;
             if (age < 2) {
                 modelFile = models().withExistingParent(name + "_stage_" + age, "block/cross")

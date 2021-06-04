@@ -2,11 +2,12 @@ package tfar.huntingandharvestenhancement;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.item.Item;
+import net.minecraft.world.FoliageColors;
+import net.minecraft.world.biome.BiomeColors;
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -18,9 +19,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import tfar.huntingandharvestenhancement.datagen.DatagenMain;
 import tfar.huntingandharvestenhancement.init.ModBlocks;
+import tfar.huntingandharvestenhancement.init.ModItems;
 import tfar.huntingandharvestenhancement.init.ModTreeDecoratorTypes;
 import tfar.huntingandharvestenhancement.world.generation.ModConfiguredFeatures;
-import tfar.huntingandharvestenhancement.init.ModItems;
 import tfar.huntingandharvestenhancement.world.generation.WorldgenHandler;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -59,12 +60,14 @@ public class HuntingAndHarvestEnhancement {
         RenderTypeLookup.setRenderLayer(ModBlocks.RASPBERRY_BUSH, RenderType.getCutoutMipped());
         RenderTypeLookup.setRenderLayer(ModBlocks.FLOWER_CARPET,RenderType.getCutoutMipped());
         RenderTypeLookup.setRenderLayer(ModBlocks.APPLE,RenderType.getCutoutMipped());
+        RenderTypeLookup.setRenderLayer(ModBlocks.ORANGE,RenderType.getCutoutMipped());
     }
 
 
     private void color(ColorHandlerEvent.Block e) {
         BlockColors colors = e.getBlockColors();
         colors.register((state, reader, pos, color) -> reader != null && pos != null ? 0x208030 : 0x71c35c, ModBlocks.CRANBERRY_BUSH);
-        colors.register((state, reader, pos, color) -> reader != null && pos != null ? 0x208030 : 0x71c35c, ModBlocks.APPLE_LEAVES);
+        colors.register((state, reader, pos, color) -> reader != null && pos != null ?
+                BiomeColors.getFoliageColor(reader, pos) | 0x00ff00 : FoliageColors.getDefault(), ModBlocks.ORANGE_LEAVES);
     }
 }
