@@ -5,6 +5,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 import tfar.huntingandharvestenhancement.datagen.assets.ModBlockstateProvider;
 import tfar.huntingandharvestenhancement.datagen.assets.ModItemModelProvider;
+import tfar.huntingandharvestenhancement.datagen.assets.ModLangProvider;
 import tfar.huntingandharvestenhancement.datagen.data.ModBlockTagsProvider;
 import tfar.huntingandharvestenhancement.datagen.data.ModLootTableProvider;
 
@@ -20,6 +21,7 @@ public class DatagenMain {
         if (e.includeClient()) {
             generator.addProvider(new ModBlockstateProvider(generator,helper));
             generator.addProvider(new ModItemModelProvider(generator,helper));
+            generator.addProvider(new ModLangProvider(generator));
         }
     }
 }

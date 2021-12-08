@@ -1,0 +1,22 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "huntingandharvestenhancement:block/coconut",
+		"particle": "huntingandharvestenhancement:block/coconut"
+	},
+	"elements": [
+		{
+			"from": [3, 6, 3],
+			"to": [13, 16, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 16, 0]},
+			"faces": {
+				"north": {"uv": [5, 5, 0, 0], "texture": "#0"},
+				"east": {"uv": [0, 5, 5, 0], "texture": "#0"},
+				"south": {"uv": [5.5, 5, 10.5, 0], "texture": "#0"},
+				"west": {"uv": [10.5, 5, 5.5, 0], "texture": "#0"},
+				"up": {"uv": [0, 5.5, 5, 10.5], "texture": "#0"},
+				"down": {"uv": [0, 5, 5, 0], "texture": "#0"}
+			}
+		}
+	]
+}

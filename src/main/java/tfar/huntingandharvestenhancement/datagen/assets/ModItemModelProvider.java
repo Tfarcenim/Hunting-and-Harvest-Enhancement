@@ -7,7 +7,6 @@ import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import tfar.huntingandharvestenhancement.HuntingAndHarvestEnhancement;
-import tfar.huntingandharvestenhancement.init.ModBlocks;
 import tfar.huntingandharvestenhancement.init.ModItems;
 
 public class ModItemModelProvider extends ItemModelProvider {
@@ -27,6 +26,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         makeOneLayerItem(ModItems.STRAWBERRIES);
         makeOneLayerItem(ModItems.LILY_BLOSSOM);
         makeOneLayerItem(ModItems.ORANGE);
+        makeOneLayerItem(ModItems.COCONUT);
+        makeOneLayerItem(ModItems.BANANA);
+
+        makeOneLayerBlockItem(ModItems.APPLE_SAPLING);
+        makeOneLayerBlockItem(ModItems.ORANGE_SAPLING);
+
         makeSimpleBlockItem(ModItems.FLOWER_CARPET);
         makeSimpleBlockItem(ModItems.ORANGE_PLANKS);
         makeSimpleBlockItem(ModItems.ORANGE_LOG);
@@ -37,6 +42,16 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void makeSimpleBlockItem(Item item) {
         getBuilder(item.getRegistryName().toString())
                 .parent(new ModelFile.UncheckedModelFile(modLoc("block/" + item.getRegistryName().getPath())));
+    }
+
+    protected void makeOneLayerBlockItem(Item item) {
+        String path = item.getRegistryName().getPath();
+        if (existingFileHelper.exists(modLoc("block/" + path), ResourcePackType.CLIENT_RESOURCES, ".png", "textures")) {
+            getBuilder(path).parent(new ModelFile.UncheckedModelFile(mcLoc("item/generated")))
+                    .texture("layer0", modLoc("block/" + path));
+        } else {
+            System.out.println("no texture for " + item + " found, skipping");
+        }
     }
 
     protected void makeOneLayerItem(Item item) {

@@ -1,11 +1,13 @@
 package tfar.huntingandharvestenhancement.datagen.assets;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.SweetBerryBushBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.model.generators.*;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import tfar.huntingandharvestenhancement.HuntingAndHarvestEnhancement;
 import tfar.huntingandharvestenhancement.block.CranberryBushBlock;
@@ -35,18 +37,56 @@ public class ModBlockstateProvider extends BlockStateProvider {
         logBlock(ModBlocks.ORANGE_LOG);
         simpleBlock(ModBlocks.ORANGE_PLANKS);
 
+        createSapling(ModBlocks.APPLE_SAPLING);
+        createSapling(ModBlocks.ORANGE_SAPLING);
 
         ModelFile modelFile = models().withExistingParent("orange_leaves", "minecraft:block/leaves")
                     .texture("all", new ResourceLocation("minecraft:block/oak_leaves"));
 
-       // ConfiguredModel[] build = ConfiguredModel.builder().modelFile(modelFile).build();
-
-
-
-
         createFruit(ModBlocks.APPLE);
         createFruit(ModBlocks.ORANGE);
         simpleBlock(ModBlocks.ORANGE_LEAVES,modelFile);
+
+        blockstateFromExistingModel(ModBlocks.COCONUT);
+        blockstateFromExistingModel(ModBlocks.BANANA);
+
+    }
+
+    protected void blockstateFromExistingModel(Block block) {
+        ModelFile modelFile = models().getExistingFile(new ResourceLocation(HuntingAndHarvestEnhancement.MODID, "block/" + block.getRegistryName().getPath()));
+        getVariantBuilder(block).forAllStates(state -> {
+            ConfiguredModel.Builder<?> builder = ConfiguredModel.builder().modelFile(modelFile);
+            if (state.hasProperty(HorizontalBlock.HORIZONTAL_FACING)) {
+                switch(state.get(HorizontalBlock.HORIZONTAL_FACING)) {
+                    case NORTH:
+                        builder.rotationY(0);
+                        break;
+                    case EAST:
+                        builder.rotationY(90);
+                        break;
+                    case SOUTH:
+                        builder.rotationY(180);
+                        break;
+                    case WEST:
+                        builder.rotationY(270);
+                        break;
+                    default:
+                        builder.rotationY(0);
+                        break;
+                }
+            }
+            return builder.build();
+        });
+    }
+
+    protected void createSapling(Block plant) {
+        String name = plant.getRegistryName().getPath();
+        getVariantBuilder(plant).forAllStates(state -> {
+            ModelFile modelFile;
+            modelFile = models().withExistingParent(name, "block/cross")
+                    .texture("cross", new ResourceLocation(HuntingAndHarvestEnhancement.MODID, "block/" + name));
+            return ConfiguredModel.builder().modelFile(modelFile).build();
+        });
     }
 
     protected void createFruit(Block plant) {

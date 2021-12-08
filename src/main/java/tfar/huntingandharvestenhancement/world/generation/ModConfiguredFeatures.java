@@ -8,11 +8,11 @@ import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
+import net.minecraft.world.gen.foliageplacer.SpruceFoliagePlacer;
+import net.minecraft.world.gen.treedecorator.CocoaTreeDecorator;
 import net.minecraft.world.gen.trunkplacer.StraightTrunkPlacer;
 import tfar.huntingandharvestenhancement.HuntingAndHarvestEnhancement;
-import tfar.huntingandharvestenhancement.decorators.AppleDecorator;
-import tfar.huntingandharvestenhancement.decorators.FruitDecorator;
-import tfar.huntingandharvestenhancement.decorators.OrangeDecorator;
+import tfar.huntingandharvestenhancement.decorators.*;
 import tfar.huntingandharvestenhancement.init.ModBlocks;
 
 import java.lang.reflect.Field;
@@ -40,26 +40,28 @@ public class ModConfiguredFeatures {
             new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModFeatureConfigs.States.OAK_LOG), new SimpleBlockStateProvider(Blocks.OAK_LEAVES.getDefaultState()),
                     new BlobFoliagePlacer(FeatureSpread.create(2), FeatureSpread.create(0), 3),
                     new StraightTrunkPlacer(4, 2, 0), new TwoLayerFeature(1, 0, 1))
-            .setDecorators(ImmutableList.of(new AppleDecorator(1)))
+            .setDecorators(ImmutableList.of(new AppleDecorator(.2f)))
             .setIgnoreVines().build());
 
     public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> ORANGE = Feature.TREE.withConfiguration(new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlocks.ORANGE_LOG.getDefaultState()),
             new SimpleBlockStateProvider(ModBlocks.ORANGE_LEAVES.getDefaultState())
             , new BlobFoliagePlacer(FeatureSpread.create(2), FeatureSpread.create(0), 3),
             new StraightTrunkPlacer(4, 2, 0), new TwoLayerFeature(1, 0, 1))
-            .setDecorators(ImmutableList.of(new OrangeDecorator(1)))
+            .setDecorators(ImmutableList.of(new OrangeDecorator(.2f)))
             .setIgnoreVines().build());
 
-    public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> BANANA = Feature.TREE.withConfiguration(new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
-            new SimpleBlockStateProvider(Blocks.OAK_LEAVES.getDefaultState())
-            , new BlobFoliagePlacer(FeatureSpread.create(2), FeatureSpread.create(0), 3),
+    public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> BANANA = Feature.TREE.withConfiguration(new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlocks.BANANA_LOG.getDefaultState()),
+            new SimpleBlockStateProvider(ModBlocks.BANANA_LEAVES.getDefaultState())
+            , new PalmFoliagePlacer(FeatureSpread.create(2, 1), FeatureSpread.create(0, 2), FeatureSpread.create(1, 1)),
             new StraightTrunkPlacer(4, 2, 0), new TwoLayerFeature(1, 0, 1))
+            .setDecorators(ImmutableList.of(new BananaDecorator(1F)))
             .setIgnoreVines().build());
 
-    public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> COCONUT = Feature.TREE.withConfiguration(new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
-            new SimpleBlockStateProvider(Blocks.OAK_LEAVES.getDefaultState())
-            , new BlobFoliagePlacer(FeatureSpread.create(2), FeatureSpread.create(0), 3),
-            new StraightTrunkPlacer(4, 2, 0), new TwoLayerFeature(1, 0, 1))
+    public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> COCONUT = Feature.TREE.withConfiguration(new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlocks.COCONUT_LOG.getDefaultState()),
+            new SimpleBlockStateProvider(ModBlocks.COCONUT_LEAVES.getDefaultState())
+            , new PalmFoliagePlacer(FeatureSpread.create(2, 1), FeatureSpread.create(0, 2), FeatureSpread.create(1, 1)),
+            new StraightTrunkPlacer(6, 2, 0), new TwoLayerFeature(1, 0, 1))
+            .setDecorators(ImmutableList.of(new CoconutDecorator(1F)))
             .setIgnoreVines().build());
 
     public static void register() {

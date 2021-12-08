@@ -4,6 +4,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.Items;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -39,6 +40,8 @@ public class ModBlocks {
     public static final Block BANANA_LEAVES = createLeavesBlock();
 
     public static final Block ORANGE_PLANKS = new Block(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD));
+    public static final Block COCONUT_PLANKS = new Block(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD));
+    public static final Block BANANA_PLANKS = new Block(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD));
 
     public static final Block APPLE_SAPLING = new SaplingBlock(new AppleTree(),AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT));
     public static final Block ORANGE_SAPLING = new SaplingBlock(new OrangeTree(),AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT));
@@ -47,8 +50,10 @@ public class ModBlocks {
 
     public static final Block FLOWER_CARPET = new FlowerCarpetBlock(AbstractBlock.Properties.create(Material.PLANTS).notSolid());
 
-    public static final Block APPLE = new FruitBlock(AbstractBlock.Properties.create(Material.PLANTS).noDrops().doesNotBlockMovement());
-    public static final Block ORANGE = new FruitBlock(AbstractBlock.Properties.create(Material.PLANTS).noDrops().doesNotBlockMovement());
+    public static final Block APPLE = new FruitBlock(AbstractBlock.Properties.create(Material.PLANTS).tickRandomly().noDrops().doesNotBlockMovement(), () -> Items.APPLE);
+    public static final Block ORANGE = new FruitBlock(AbstractBlock.Properties.create(Material.PLANTS).tickRandomly().noDrops().doesNotBlockMovement(), () -> ModItems.ORANGE);
+    public static final Block COCONUT = new FruitBlock(AbstractBlock.Properties.create(Material.PLANTS).tickRandomly().noDrops().doesNotBlockMovement(), () -> ModItems.ORANGE);
+    public static final Block BANANA = new FruitBlock(AbstractBlock.Properties.create(Material.PLANTS).tickRandomly().noDrops().doesNotBlockMovement(), () -> ModItems.ORANGE);
 
     private static List<Block> MOD_BLOCKS;
 

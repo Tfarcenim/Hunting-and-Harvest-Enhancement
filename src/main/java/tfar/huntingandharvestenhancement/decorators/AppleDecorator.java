@@ -12,7 +12,7 @@ import java.util.Random;
 public class AppleDecorator extends FruitDecorator {
     public static final Codec<AppleDecorator> CODEC = Codec.floatRange(0.0F, 1.0F)
             .fieldOf("fruit")
-            .xmap(AppleDecorator::new, decorator -> decorator.probability)
+            .xmap(AppleDecorator::new, decorator -> decorator.density)
             .codec();
 
     public AppleDecorator(float probability) {

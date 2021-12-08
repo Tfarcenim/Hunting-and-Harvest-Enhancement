@@ -12,11 +12,11 @@ import java.util.Random;
 public class OrangeDecorator extends FruitDecorator {
     public static final Codec<OrangeDecorator> CODEC = Codec.floatRange(0.0F, 1.0F)
             .fieldOf("fruit")
-            .xmap(OrangeDecorator::new, decorator -> decorator.probability)
+            .xmap(OrangeDecorator::new, decorator -> decorator.density)
             .codec();
 
-    public OrangeDecorator(float probability) {
-        super(probability);
+    public OrangeDecorator(float density) {
+        super(density);
     }
 
     @Override

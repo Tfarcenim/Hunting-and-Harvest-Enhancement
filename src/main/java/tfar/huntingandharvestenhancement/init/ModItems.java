@@ -1,16 +1,8 @@
 package tfar.huntingandharvestenhancement.init;
 
-import net.minecraft.block.*;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.*;
 import net.minecraftforge.event.RegistryEvent;
 import tfar.huntingandharvestenhancement.HuntingAndHarvestEnhancement;
-import tfar.huntingandharvestenhancement.block.trees.AppleTree;
-import tfar.huntingandharvestenhancement.block.trees.BananaPalm;
-import tfar.huntingandharvestenhancement.block.trees.CoconutPalm;
-import tfar.huntingandharvestenhancement.block.trees.OrangeTree;
-import tfar.huntingandharvestenhancement.item.CranberryBushItem;
 import tfar.huntingandharvestenhancement.item.CranberryItem;
 import tfar.huntingandharvestenhancement.item.LilyBlossomItem;
 
@@ -37,6 +29,8 @@ public class ModItems {
     public static final Item SEABERRIES = new BlockNamedItem(ModBlocks.SEABERRY_BUSH, (new Item.Properties()).group(group).food(Foods.SWEET_BERRIES));
     public static final Item HONEYBERRIES = new BlockNamedItem(ModBlocks.HONEYBERRY_BUSH, (new Item.Properties()).group(group).food(Foods.SWEET_BERRIES));
 
+    public static final Item BANANA = new Item(new Item.Properties().group(group).food(Foods.APPLE));
+    public static final Item COCONUT = new Item(new Item.Properties().group(group).food(Foods.APPLE));
     public static final Item ORANGE = new Item(new Item.Properties().group(group).food(Foods.APPLE));
 
     public static final Item LILY_BLOSSOM = new LilyBlossomItem(new Item.Properties().group(group));

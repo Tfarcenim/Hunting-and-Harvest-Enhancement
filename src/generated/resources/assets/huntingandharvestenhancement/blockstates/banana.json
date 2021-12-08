@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "huntingandharvestenhancement:block/banana"
+    },
+    "age=1": {
+      "model": "huntingandharvestenhancement:block/banana"
+    },
+    "age=2": {
+      "model": "huntingandharvestenhancement:block/banana"
+    },
+    "age=3": {
+      "model": "huntingandharvestenhancement:block/banana"
+    }
+  }
+}

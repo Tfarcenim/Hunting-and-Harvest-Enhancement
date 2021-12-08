@@ -2,9 +2,7 @@ package tfar.huntingandharvestenhancement.init;
 
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.minecraftforge.event.RegistryEvent;
-import tfar.huntingandharvestenhancement.decorators.AppleDecorator;
-import tfar.huntingandharvestenhancement.decorators.FruitDecorator;
-import tfar.huntingandharvestenhancement.decorators.OrangeDecorator;
+import tfar.huntingandharvestenhancement.decorators.*;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
@@ -16,6 +14,8 @@ public class ModTreeDecoratorTypes {
 
     public static final TreeDecoratorType<AppleDecorator> APPLE = new TreeDecoratorType<>(AppleDecorator.CODEC);
     public static final TreeDecoratorType<OrangeDecorator> ORANGE = new TreeDecoratorType<>(OrangeDecorator.CODEC);
+    public static final TreeDecoratorType<CoconutDecorator> COCONUT = new TreeDecoratorType<>(CoconutDecorator.CODEC);
+    public static final TreeDecoratorType<BananaDecorator> BANANA = new TreeDecoratorType<>(BananaDecorator.CODEC);
 
     private static List<TreeDecoratorType<?>> MOD_TREE_DECORATOR_TYPES;
 
