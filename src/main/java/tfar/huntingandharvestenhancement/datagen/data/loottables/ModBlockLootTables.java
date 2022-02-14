@@ -23,12 +23,16 @@ public class ModBlockLootTables extends BlockLootTables {
     @Override
     protected void addTables() {
         registerDropSelfLootTable(ModBlocks.ORANGE_LOG);
-        registerDropSelfLootTable(ModBlocks.COCONUT_LOG);
+        registerDropSelfLootTable(ModBlocks.PALM_LOG);
         registerDropSelfLootTable(ModBlocks.BANANA_LOG);
 
-        this.registerLootTable(ModBlocks.ORANGE_LEAVES, leaves -> droppingWithChancesAndSticks(leaves, ModBlocks.ORANGE_SAPLING, DEFAULT_SAPLING_DROP_RATES));
-        this.registerLootTable(ModBlocks.BANANA_LEAVES, leaves -> droppingWithChancesAndSticks(leaves, ModBlocks.BANANA_SAPLING, DEFAULT_SAPLING_DROP_RATES));
-        this.registerLootTable(ModBlocks.COCONUT_LEAVES, leaves -> droppingWithChancesAndSticks(leaves, ModBlocks.COCONUT_SAPLING, DEFAULT_SAPLING_DROP_RATES));
+        registerDropSelfLootTable(ModBlocks.ORANGE_PLANKS);
+        registerDropSelfLootTable(ModBlocks.PALM_PLANKS);
+        registerDropSelfLootTable(ModBlocks.BANANA_PLANKS);
+
+        registerLootTable(ModBlocks.ORANGE_LEAVES, leaves -> droppingWithChancesAndSticks(leaves, ModBlocks.ORANGE_SAPLING, DEFAULT_SAPLING_DROP_RATES));
+        registerLootTable(ModBlocks.BANANA_LEAVES, leaves -> droppingWithChancesAndSticks(leaves, ModBlocks.BANANA_SAPLING, DEFAULT_SAPLING_DROP_RATES));
+        registerLootTable(ModBlocks.PALM_LEAVES, leaves -> droppingWithChancesAndSticks(leaves, ModBlocks.PALM_SAPLING, DEFAULT_SAPLING_DROP_RATES));
 
         registerBushLootTable(ModBlocks.BLACKBERRY_BUSH,ModItems.BLACKBERRIES);
         registerBushLootTable(ModBlocks.BLUEBERRY_BUSH,ModItems.BLUEBERRIES);
@@ -40,11 +44,14 @@ public class ModBlockLootTables extends BlockLootTables {
 
         registerDropSelfLootTable(ModBlocks.APPLE_SAPLING);
         registerDropSelfLootTable(ModBlocks.ORANGE_SAPLING);
-        registerDropSelfLootTable(ModBlocks.COCONUT_SAPLING);
+        registerDropSelfLootTable(ModBlocks.PALM_SAPLING);
         registerDropSelfLootTable(ModBlocks.BANANA_SAPLING);
+
         registerDropSelfLootTable(ModBlocks.FLOWER_CARPET);
 
-        registerDropSelfLootTable(ModBlocks.ORANGE_PLANKS);
+        registerDropSelfLootTable(ModBlocks.RED_SORGHUM);
+        registerDropSelfLootTable(ModBlocks.CORN);
+        registerDropSelfLootTable(ModBlocks.HAMMOCK);
     }
 
     protected void registerBushLootTable(Block bush, Item berry) {

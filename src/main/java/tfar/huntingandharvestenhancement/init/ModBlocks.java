@@ -32,28 +32,33 @@ public class ModBlocks {
     public static final Block HONEYBERRY_BUSH = new SweetBerryBushBlock(AbstractBlock.Properties.from(Blocks.SWEET_BERRY_BUSH));
 
     public static final RotatedPillarBlock ORANGE_LOG = createLogBlock(MaterialColor.WOOD, MaterialColor.OBSIDIAN);
-    public static final RotatedPillarBlock COCONUT_LOG = createLogBlock(MaterialColor.WOOD, MaterialColor.OBSIDIAN);
+    public static final RotatedPillarBlock PALM_LOG = createLogBlock(MaterialColor.WOOD, MaterialColor.OBSIDIAN);
     public static final RotatedPillarBlock BANANA_LOG = createLogBlock(MaterialColor.WOOD, MaterialColor.OBSIDIAN);
 
     public static final Block ORANGE_LEAVES = createLeavesBlock();
-    public static final Block COCONUT_LEAVES = createLeavesBlock();
+    public static final Block PALM_LEAVES = createLeavesBlock();
     public static final Block BANANA_LEAVES = createLeavesBlock();
 
     public static final Block ORANGE_PLANKS = new Block(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD));
-    public static final Block COCONUT_PLANKS = new Block(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD));
+    public static final Block PALM_PLANKS = new Block(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD));
     public static final Block BANANA_PLANKS = new Block(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD));
 
     public static final Block APPLE_SAPLING = new SaplingBlock(new AppleTree(),AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT));
     public static final Block ORANGE_SAPLING = new SaplingBlock(new OrangeTree(),AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT));
-    public static final Block COCONUT_SAPLING = new SaplingBlock(new CoconutPalm(),AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT));
+    public static final Block PALM_SAPLING = new SaplingBlock(new CoconutPalm(),AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT));
     public static final Block BANANA_SAPLING = new SaplingBlock(new BananaPalm(),AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT));
 
     public static final Block FLOWER_CARPET = new FlowerCarpetBlock(AbstractBlock.Properties.create(Material.PLANTS).notSolid());
 
     public static final Block APPLE = new FruitBlock(AbstractBlock.Properties.create(Material.PLANTS).tickRandomly().noDrops().doesNotBlockMovement(), () -> Items.APPLE);
     public static final Block ORANGE = new FruitBlock(AbstractBlock.Properties.create(Material.PLANTS).tickRandomly().noDrops().doesNotBlockMovement(), () -> ModItems.ORANGE);
-    public static final Block COCONUT = new FruitBlock(AbstractBlock.Properties.create(Material.PLANTS).tickRandomly().noDrops().doesNotBlockMovement(), () -> ModItems.ORANGE);
-    public static final Block BANANA = new FruitBlock(AbstractBlock.Properties.create(Material.PLANTS).tickRandomly().noDrops().doesNotBlockMovement(), () -> ModItems.ORANGE);
+    public static final Block COCONUT = new FruitBlock(AbstractBlock.Properties.create(Material.PLANTS).tickRandomly().noDrops().doesNotBlockMovement(), () -> ModItems.COCONUT);
+    public static final Block BANANA = new FruitBlock(AbstractBlock.Properties.create(Material.PLANTS).tickRandomly().noDrops().doesNotBlockMovement(), () -> ModItems.BANANA);
+
+    public static final Block RED_SORGHUM = new CropsBlock(AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.CROP));
+    public static final Block CORN = new CropsBlock(AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.CROP));
+
+    public static final Block HAMMOCK = new HammockBlock(AbstractBlock.Properties.create(Material.PLANTS).sound(SoundType.CROP));
 
     private static List<Block> MOD_BLOCKS;
 

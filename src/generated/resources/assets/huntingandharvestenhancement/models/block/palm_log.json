@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "huntingandharvestenhancement:block/palm_log",
+    "end": "huntingandharvestenhancement:block/palm_log_top"
+  }
+}

@@ -1,5 +1,6 @@
 package tfar.huntingandharvestenhancement.init;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.item.*;
 import net.minecraftforge.event.RegistryEvent;
 import tfar.huntingandharvestenhancement.HuntingAndHarvestEnhancement;
@@ -14,7 +15,7 @@ import java.util.stream.Collectors;
 
 public class ModItems {
 
-    private static final ItemGroup group = new ItemGroup(HuntingAndHarvestEnhancement.MODID) {
+    public static final ItemGroup group = new ItemGroup(HuntingAndHarvestEnhancement.MODID) {
         @Override
         public ItemStack createIcon() {
             return new ItemStack(BLACKBERRIES);
@@ -36,19 +37,33 @@ public class ModItems {
     public static final Item LILY_BLOSSOM = new LilyBlossomItem(new Item.Properties().group(group));
 
     public static final Item ORANGE_LOG = new BlockItem(ModBlocks.ORANGE_LOG, new Item.Properties().group(group));
-    public static final Item COCONUT_LOG = new BlockItem(ModBlocks.COCONUT_LOG, new Item.Properties().group(group));
+    public static final Item PALM_LOG = new BlockItem(ModBlocks.PALM_LOG, new Item.Properties().group(group));
     public static final Item BANANA_LOG = new BlockItem(ModBlocks.BANANA_LOG, new Item.Properties().group(group));
 
     public static final Item ORANGE_LEAVES = new BlockItem(ModBlocks.ORANGE_LEAVES, new Item.Properties().group(group));
-    public static final Item COCONUT_LEAVES = new BlockItem(ModBlocks.COCONUT_LEAVES, new Item.Properties().group(group));
+    public static final Item PALM_LEAVES = new BlockItem(ModBlocks.PALM_LEAVES, new Item.Properties().group(group));
     public static final Item BANANA_LEAVES = new BlockItem(ModBlocks.BANANA_LEAVES, new Item.Properties().group(group));
 
     public static final Item APPLE_SAPLING = new BlockItem(ModBlocks.APPLE_SAPLING, new Item.Properties().group(group));
     public static final Item ORANGE_SAPLING = new BlockItem(ModBlocks.ORANGE_SAPLING, new Item.Properties().group(group));
-    public static final Item COCONUT_SAPLING = new BlockItem(ModBlocks.COCONUT_SAPLING, new Item.Properties().group(group));
+    public static final Item PALM_SAPLING = new BlockItem(ModBlocks.PALM_SAPLING, new Item.Properties().group(group));
     public static final Item BANANA_SAPLING = new BlockItem(ModBlocks.BANANA_SAPLING, new Item.Properties().group(group));
 
     public static final Item ORANGE_PLANKS = new BlockItem(ModBlocks.ORANGE_PLANKS, new Item.Properties().group(group));
+    public static final Item PALM_PLANKS = new BlockItem(ModBlocks.PALM_PLANKS, new Item.Properties().group(group));
+    public static final Item BANANA_PLANKS = new BlockItem(ModBlocks.BANANA_PLANKS, new Item.Properties().group(group));
+    public static final Item RED_SORGHUM = new BlockNamedItem(ModBlocks.RED_SORGHUM, new Item.Properties().group(group));
+    public static final Item CORN = new BlockNamedItem(ModBlocks.CORN, new Item.Properties().group(group));
+
+    public static final Item JAR = new Item(new Item.Properties().group(group));
+    public static final Item MINING_HELMET = new Item(new Item.Properties().group(group));
+    public static final Item WOODEN_SHEARS = new ShearsItem(new Item.Properties().maxDamage(119).group(group));
+
+    public static final Item BANANA_FIBER = new Item(new Item.Properties().group(group));
+    public static final Item BANANA_STRING = new Item(new Item.Properties().group(group));
+    public static final Item BANANA_WOOL = new Item(new Item.Properties().group(group));
+    public static final Item HAMMOCK = new BlockItem(ModBlocks.HAMMOCK,new Item.Properties().group(group));
+
 
     public static final Item FLOWER_CARPET = new BlockItem(ModBlocks.FLOWER_CARPET,new Item.Properties().group(group));
 

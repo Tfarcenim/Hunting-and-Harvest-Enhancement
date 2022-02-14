@@ -34,11 +34,18 @@ public class ModBlockstateProvider extends BlockStateProvider {
         createBushModels(ModBlocks.BLUEBERRY_BUSH);
         createCranberryModels();
         createCarpetModel(ModBlocks.FLOWER_CARPET);
+
         logBlock(ModBlocks.ORANGE_LOG);
         simpleBlock(ModBlocks.ORANGE_PLANKS);
+        logBlock(ModBlocks.PALM_LOG);
+        simpleBlock(ModBlocks.PALM_PLANKS);
+       // logBlock(ModBlocks.BANANA_LOG);
+       // simpleBlock(ModBlocks.BANANA_PLANKS);
 
         createSapling(ModBlocks.APPLE_SAPLING);
         createSapling(ModBlocks.ORANGE_SAPLING);
+        createSapling(ModBlocks.PALM_SAPLING);
+        createSapling(ModBlocks.BANANA_SAPLING);
 
         ModelFile modelFile = models().withExistingParent("orange_leaves", "minecraft:block/leaves")
                     .texture("all", new ResourceLocation("minecraft:block/oak_leaves"));

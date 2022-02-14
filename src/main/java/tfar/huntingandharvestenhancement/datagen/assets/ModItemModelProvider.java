@@ -31,11 +31,23 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         makeOneLayerBlockItem(ModItems.APPLE_SAPLING);
         makeOneLayerBlockItem(ModItems.ORANGE_SAPLING);
+        makeOneLayerBlockItem(ModItems.PALM_SAPLING);
+        makeOneLayerBlockItem(ModItems.BANANA_SAPLING);
 
         makeSimpleBlockItem(ModItems.FLOWER_CARPET);
+
+
         makeSimpleBlockItem(ModItems.ORANGE_PLANKS);
         makeSimpleBlockItem(ModItems.ORANGE_LOG);
         makeSimpleBlockItem(ModItems.ORANGE_LEAVES);
+
+        makeSimpleBlockItem(ModItems.PALM_PLANKS);
+        makeSimpleBlockItem(ModItems.PALM_LOG);
+        makeSimpleBlockItem(ModItems.PALM_LEAVES);
+
+        makeSimpleBlockItem(ModItems.BANANA_PLANKS);
+        makeSimpleBlockItem(ModItems.BANANA_LOG);
+        makeSimpleBlockItem(ModItems.BANANA_LEAVES);
     }
 
 

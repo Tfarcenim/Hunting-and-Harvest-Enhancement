@@ -104,8 +104,11 @@ public class HuntingAndHarvestEnhancement {
         RenderTypeLookup.setRenderLayer(ModBlocks.APPLE,RenderType.getCutoutMipped());
         RenderTypeLookup.setRenderLayer(ModBlocks.ORANGE,RenderType.getCutoutMipped());
         RenderTypeLookup.setRenderLayer(ModBlocks.BANANA,RenderType.getCutoutMipped());
+
         RenderTypeLookup.setRenderLayer(ModBlocks.APPLE_SAPLING,RenderType.getCutoutMipped());
         RenderTypeLookup.setRenderLayer(ModBlocks.ORANGE_SAPLING,RenderType.getCutoutMipped());
+        RenderTypeLookup.setRenderLayer(ModBlocks.PALM_SAPLING,RenderType.getCutoutMipped());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BANANA_SAPLING,RenderType.getCutoutMipped());
     }
 
 

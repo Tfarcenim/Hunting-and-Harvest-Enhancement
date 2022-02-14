@@ -35,7 +35,7 @@
                   ]
                 }
               ],
-              "name": "huntingandharvestenhancement:coconut_leaves"
+              "name": "huntingandharvestenhancement:palm_leaves"
             },
             {
               "type": "minecraft:item",
@@ -54,7 +54,7 @@
                   ]
                 }
               ],
-              "name": "huntingandharvestenhancement:coconut_sapling"
+              "name": "huntingandharvestenhancement:palm_sapling"
             }
           ]
         }
